@@ -15,8 +15,8 @@ furry1 = room()
 # all commands, text
 
 
-with f as open('fox.txt','r'):
-    foxascii = f.readall()
+with open('fox.txt','r') as f:
+    foxascii = f.read()
 
 
 
@@ -24,18 +24,18 @@ metaworld0.init_txt = 'Are you Maxwell Dare Porter, otherwise known as Barnacle 
 metaworld0.actions = {'say':  {'yes': ('',field),
                                'no' : ('',metaworld1),
                                },
-                      'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.')}
+                      'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.',None)}
                         }
 
 metaworld1.init_txt = 'Do you like Strawberry Slushie Martinis with sugar on the rim?'
 metaworld1.actions = {  'say': {'yes': ('',field),
                                 'no' : ('','I\'m wasting my time with you. Piss off.','EXIT'),
                                },
-                        'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.')}
+                        'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.',None)}
                         }
-field.init_txt = 'Great, it\'s you, we don\'t have much time. It seems to me your trans-manifold data buffer is pretty small\
- so I’ll provide audiovisual descriptions of your coordinates for the time being. Upload is a bitch so we’ll keep it to small\
-  strings for your responses. Starting in 3 PPP 2 PPP 1 PPP\n\n\n You find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.'
+field.init_txt = 'Great, it\'s you, we don\'t have much time.PPP PPPIt seems to me your trans-manifold data buffer is pretty small.PPP\
+ PPPI’ll provide audiovisual descriptions of your coordinates for the time being.PPP PPPUpload is a bitch so we’ll keep it to small\
+  strings for your responses.PPP PPPStarting inPPP 3...PPP 2...PPP 1...PPP\n\n\nYou find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.\n'
   
 field.actions = {'look' : {''     : ('There are lots of foxes, solid in a ring around you for at least 10 meters. You see trees in the moonlit distance.',None)},
                  'talk' : {''     : ('You babble to yourself. The foxes do not respond, but seem to grow more angry.',None),
@@ -98,7 +98,7 @@ furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. T
                             'yes' : ('Well, get on with it.', None),
                            },
                   'help' : {'': ('What more help do you want, flat-face? I gave you all the computers have.\nPPPThese transdimensional computations are only possible to solve in numerical riddles.',None)},
-                  'enter_code' : {'12783', '''Very nice, that checks out...
+                  'enter_code' : {'12783', ('''Very nice, that checks out...
                       PPP PPP
                       FOX KING!
                       PPP
@@ -114,7 +114,7 @@ furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. T
 def print2(text,**kwargs):
     if 'PPP' in text:
         for textbit in text.split('PPP'):
-            print(textbit,end="")
+            print(textbit,end="",flush=True)
             time.sleep(1)
     else:
          print(text,**kwargs)
