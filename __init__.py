@@ -7,48 +7,59 @@ class room():
         self.init_txt = ''
 
 # all rooms
-metaworld0 = room(); metaworld1(); field = room(); fieldq = room(); persuasion= room(); task1 = room(); task2 = room()
+metaworld0 = room(); metaworld1 = room(); field = room(); fieldq = room(); persuasion= room(); task1 = room(); task2 = room()
 
 furry1 = room()
 
 
 # all commands, text
 
+
+with f as open('fox.txt','r'):
+    foxascii = f.readall()
+
+
+
 metaworld0.init_txt = 'Are you Maxwell Dare Porter, otherwise known as Barnacle Bill the Sailor?'
-metaworld0.actions = {  'yes': ('',field),
-                        'no' : ('',metaworld1)
+metaworld0.actions = {'say':  {'yes': ('',field),
+                               'no' : ('',metaworld1),
+                               },
+                      'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.')}
                         }
 
 metaworld1.init_txt = 'Do you like Strawberry Slushie Martinis with sugar on the rim?'
-metaworld1.actions = {  'yes': ('',field),
-                        'no' : ('I\'m wasting my time with you. Piss off.','EXIT')
+metaworld1.actions = {  'say': {'yes': ('',field),
+                                'no' : ('','I\'m wasting my time with you. Piss off.','EXIT'),
+                               },
+                        'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.')}
                         }
 field.init_txt = 'Great, it\'s you, we don\'t have much time. It seems to me your trans-manifold data buffer is pretty small\
  so I’ll provide audiovisual descriptions of your coordinates for the time being. Upload is a bitch so we’ll keep it to small\
-  strings for your responses. Starting in 3 PPP 2 PPP 1 PPP\n\n\n You find yourself naked in a field, surrounded by foxes.'
+  strings for your responses. Starting in 3 PPP 2 PPP 1 PPP\n\n\n You find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.'
   
-field.actions = {'look' : {''     : ('There are lots of foxes.',None)},
+field.actions = {'look' : {''     : ('There are lots of foxes, solid in a ring around you for at least 10 meters. You see trees in the moonlit distance.',None)},
                  'talk' : {''     : ('You babble to yourself. The foxes do not respond, but seem to grow more angry.',None),
-                           'fox'  : ('You talk to the head fox.',fieldq),
-                           'foxes': ('You talk to the head fox.',fieldq)
+                           'fox'  : ('A fox comes forward, apparently their leader. You talk to the head fox.',fieldq),
+                           'foxes': ('A fox comes forward, apparently their leader. You talk to the head fox.',fieldq)
                           },
              }
-fieldq.init_txt = 'The head fox climbs on top of three other foxes. At eye level he asks you: Naked man, can you help me?'
-fieldq.actions = {'look' : {'' : ('The foxes await your answer intently, their eyes glow softly in the darkness.',None)},
-<<<<<<< HEAD
-                  'say'  : {'yes': ('',None),
+fieldq.init_txt = 'The head fox climbs on top of two other foxes, reaching up towards your face.\nPPP PPP' + foxascii + '\nPPPAt eye level he asks you: Naked man, can you help me?'
+fieldq.actions = {'look' : {'' : ('The foxes await your answer intently, their eyes glow softly in the moonlight.',None)},
+                  'say'  : {'yes': ('',task1),
                             'no' : ('', persuasion),
                             },
                   }
                   
-persuasion.init_txt = 'The head fox scoffs at you. PPP He replies, with a coarse voice: Our king told us \
+persuasion.init_txt = 'The head fox scoffs at you.PPP He replies, with a coarse voice: Our king told us \
 your kin has a set of pills that concentrate all desirable edibles. We could provide you with those if you \
 so choose. Would this change your mind?'
 
-persuasion.actions = {'yes': ('',task1)
-                  'no' : ('The head fox laughs at you an turns toward his pack with this words: \n Brothers,\
+persuasion.actions = {'look' : {'' : ('The foxes await your answer intently, their eyes glow softly in the moonlight.',None)},
+                      'say': {'yes': ('',task1),
+                              'no' : ('The head fox laughs at you an turns toward his pack with this words: \n Brothers,\
                    he clearly isn\'t the chosen one. I say we eat him and wait for the next hairless biped! \n The\
-                    foxes tore you to pieces...','EXIT')
+                    foxes tore you to pieces...','EXIT'),
+                              },
                   }
 task1.init_txt = 'The head fox proceeds: \n Ok, a bit of background. You live in the cotangent bundle of our manifold. \
 For every point in our space there’s a vector field in yours. Our king used to study how to minimize \
@@ -56,14 +67,14 @@ our actions. And for that he had to go to your world. Our effort to track him do
 for a set of three imprints he must have left in his journeys. \n To our best knowledge, the first one is hidden \
  in the source of all knowledge. With you must retrieve the source of all suffering.  It should look like mountain peeks. \
   Inside search for the reason of the discreetness of a conserved quantity. Reference this.'
-task1.actions ={'6.153': ('',task2)}
+task1.actions = {'enter_code': {'6.153': ('',task2)},
+                 'look' : {'':('The foxes buzz around in some sort of dance, yipping as they go.\nIt reminds you of dancing particles of dust.', None)}
+                 }
 
 task2.init_txt =  'Great, this means he was in search of the fox monopole. Our monarch is the warmest and furriest of all foxes, \
 In order to solve the Original Model Lagrangian he must have required some due preparations. Our experts tell us that his next \
 direction would have been in the search of warmth and wakefulness. Hairless friend, search for this ones within your surroundings.'
-task2.actions ={'': ('',)}
-
-=======
+task2.actions =  {
                   'say'  : {'yes': ('yes text',furry1),
                             'no' : ('no text', None),
                             },
@@ -95,10 +106,9 @@ furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. T
                       PPP...PPPI told you to stay away from those conventions.
                       PPPWhat do you call yourselves, again? Skinnies?
                       PPPI don't judge what you do in your free time, but...PPPyour human analogues, the furries, at least know how to keep the right amount of fur showing! HAHAHA.
-                      PPPGet back to work, your people need you.
+                      PPPGet back to work, your foxes need you.
                       ''','EXIT')},
                   }
->>>>>>> f173a89a984d855959037a0ffdfd7a2e10848fe8
 
 
 def print2(text,**kwargs):
@@ -127,7 +137,7 @@ def get_command(room):
         print("You can't do that.")
         return get_command(room)
 
-this_room = field
+this_room = metaworld0
 while True:
     print2(this_room.init_txt)
     val = get_command(this_room)
