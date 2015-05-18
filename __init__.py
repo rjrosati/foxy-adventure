@@ -147,7 +147,7 @@ while True:
     while val is None:
         val = get_command(this_room)
     if val == 'EXIT':
-        print2('Foxworld connection terminated.\nPPPGoodbye.\n')
+        print2(deathascii+'Foxworld connection terminated.\nPPPGoodbye.\n')
         sys.exit(0)
     this_room = val
         
