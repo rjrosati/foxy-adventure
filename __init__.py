@@ -1,5 +1,6 @@
 import time
 import sys
+import hashlib
 
 class room():
     def __init__(self):
@@ -72,14 +73,14 @@ our actions. And for that he had to go to your world. Our effort to track him do
 for a set of three imprints he must have left in his journeys. \n To our best knowledge, the first one is hidden \
  in the source of all knowledge. With you must retrieve the source of all suffering.  It should look like mountain peeks. \
   Inside search for the reason of the discreetness of a conserved quantity. Reference this.'
-task1.actions = {'enter_code': {'6.153': ('',task2)},
+task1.actions = {'enter_code': {'c32992e3b2a8e986c4ea1b19378b0280d765f12b20053bf2351b86fc': ('',task2)},
                  'look' : {'':('The foxes buzz around in some sort of dance, yipping as they go.\nIt reminds you of the dance of sparks breaking through an air gap.', None)}
                  }
 
 task2.init_txt =  'Great, this means he was in search of the fox monopole. Our monarch is the warmest and furriest of all foxes, \
 In order to solve the Original Model Lagrangian he must have required some due preparations. Our experts tell us that his next \
 direction would have been in the search of warmth and wakefulness. Hairless friend, search for this ones within your surroundings.'
-task2.actions =  {'enter_baby_order' :{'4154781481226426191177580544000000':('',furry1)},
+task2.actions =  {'enter_baby_order' :{'69baadf19ba802db53bc21a019a27d37ff92cc00ffe0a411f38c7fba':('',furry1)},
                   'look'  : {'': ('You notice baby foxes cuddling. Your hearth melts. You die.','EXIT')
                             }
                   }
@@ -102,7 +103,7 @@ furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. T
                             'yes' : ('Well, get on with it.', None),
                            },
                   'help' : {'': ('What more help do you want, flat-face? I gave you all the computers have.\nPPPThese transdimensional computations are only possible to solve in numerical riddles.',None)},
-                  'enter_code' : {'12783': ('''Very nice, that checks out...
+                  'enter_code' : {'36b5a957a8a80218c2095954bfd7c09e29f18978f6d45c62a0a9635a': ('''Very nice, that checks out...
 PPP PPP
 FOX KING!'''
 + foxkingascii +
@@ -136,6 +137,8 @@ def get_command(room):
         print('Unrecognized command: ',parts[0])
         print('Valid commands in this area are:',', '.join(room.actions.keys()))
         return get_command(room) 
+    if parts[0].startswith('enter_'):
+        parts[1] = hashlib.sha224(parts[1]).hexdigest()
     action = room.actions[parts[0]]
     try:
         print2(action[parts[1]][0])
