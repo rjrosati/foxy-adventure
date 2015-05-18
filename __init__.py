@@ -103,9 +103,9 @@ furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. T
                   'help' : {'': ('What more help do you want, flat-face? I gave you all the computers have.\nPPPThese transdimensional computations are only possible to solve in numerical riddles.',None)},
                   'enter_code' : {'12783': ('''Very nice, that checks out...
 PPP PPP
-FOX KING!'
-+foxkingascii+
-'PPP
+FOX KING!'''
++ foxkingascii +
+'''PPP
 Do you remember your true identity now?
 PPP...PPPI told you to stay away from those conventions.
 PPPWhat do you call yourselves, again? Skinnies?
