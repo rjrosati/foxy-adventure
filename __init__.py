@@ -21,7 +21,6 @@ with open('death.txt','r') as f2:
     deathascii = f2.read()
 with open('foxking.txt','r') as f3:
     foxkingascii = f3.read()
-
 with open('field.txt','r') as f3:
     fieldascii = f3.read()
 
