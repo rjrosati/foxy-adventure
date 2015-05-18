@@ -15,8 +15,10 @@ furry1 = room()
 # all commands, text
 
 
-with open('fox.txt','r') as f:
-    foxascii = f.read()
+with open('fox.txt','r') as f1:
+    foxascii = f1.read()
+with open('death.txt','r') as f2:
+    deathascii = f2.read()
 
 
 
@@ -74,24 +76,22 @@ task1.actions = {'enter_code': {'6.153': ('',task2)},
 task2.init_txt =  'Great, this means he was in search of the fox monopole. Our monarch is the warmest and furriest of all foxes, \
 In order to solve the Original Model Lagrangian he must have required some due preparations. Our experts tell us that his next \
 direction would have been in the search of warmth and wakefulness. Hairless friend, search for this ones within your surroundings.'
-task2.actions =  {
-                  'say'  : {'yes': ('yes text',furry1),
-                            'no' : ('no text', None),
-                            },
+task2.actions =  {'enter_baby_order' :{'4154781481226426191177580544000000':('',furry1)},
+                  'look'  : {'': ('You notice baby foxes cuddling. Your hearth melts. You die.','EXIT')
+                            }
                   }
-furry1.init_txt = '''Very nice. We have confirmation of the coffee code sequence on our end. Good work, boss.
-PPPPPPThere aren't more than 5 foxes in the world capable of that feat. We almost know who you are.
-PPPPPPWe have one finaltask for you.
+furry1.init_txt = '''Very nice. We have confirmation of the baby monster sequence on our end. Good work, boss.
+PPPThere aren't more than 5 foxes in the world capable of that feat. We almost know who you are.
+PPPWe have one finaltask for you.
 
-PPPPPPWe think we\'ve found something on your manifold.
-PPPPPPSomething... PPPbig.
-PPPPPPThere\'s a fox monopole right under your tailless ass.
-PPPPPPSearch high in the room where old hopes go to die, inked in red.
-PPPPPPThere you\'ll find a small, fuzzy dual of the fox monopole in our realm.
-PPPPPPFind it and enter the secret numbers the transdimensional lift has inscribed to its buttocks.
-'''
+PPPWe think we\'ve found something on your manifold.
+PPPSomething... PPPbig.
+PPPThere\'s a fox monopole right under your tailless ass.
+PPPSearch high in the room where old hopes go to die, inked in red.
+There you\'ll find a small, fuzzy dual of the fox monopole in our realm.
+Find it and enter the secret numbers the transdimensional lift has inscribed to its buttocks.'''
 
-furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. The audience looks on with awe. They\'re counting on you... sexy.',None),
+furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. The audience looks on with awe. They\'re counting on you...PPP sexy.',None),
                            'computer' : ('It\'s an older computer, no match for a skilled hacker. Alas, you aren\'t even caught up on your basics.',None)
                            },
                   'say'  : {'fuck': ('Profanity will not be tolerated here. May you rot in that human-infested hell.','EXIT'),
