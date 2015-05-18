@@ -15,8 +15,10 @@ furry1 = room()
 # all commands, text
 
 
-with open('fox.txt','r') as f:
-    foxascii = f.read()
+with open('fox.txt','r') as f1:
+    foxascii = f1.read()
+with open('death.txt','r') as f2:
+    deathascii = f2.read()
 
 
 
@@ -143,7 +145,7 @@ while True:
     while val is None:
         val = get_command(this_room)
     if val == 'EXIT':
-        print2('Foxworld connection terminated.\nPPPGoodbye.')
+        print2(deathascii+'Foxworld connection terminated.\nPPPGoodbye.')
         sys.exit(0)
     this_room = val
         
