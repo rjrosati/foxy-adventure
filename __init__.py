@@ -29,13 +29,13 @@ metaworld0.actions = {'say':  {'yes': ('',field),
 
 metaworld1.init_txt = 'Do you like Strawberry Slushie Martinis with sugar on the rim?'
 metaworld1.actions = {  'say': {'yes': ('',field),
-                                'no' : ('','I\'m wasting my time with you. Piss off.','EXIT'),
+                                'no' : ('I\'m wasting my time with you. Piss off.','EXIT'),
                                },
                         'look': {'': ('You are in a black void. The only thing you can perceive is the booming voice which just posed the question.',None)}
                         }
-field.init_txt = 'Great, it\'s you, we don\'t have much time.PPP PPPIt seems to me your trans-manifold data buffer is pretty small.PPP\
- PPPI’ll provide audiovisual descriptions of your coordinates for the time being.PPP PPPUpload is a bitch so we’ll keep it to small\
-  strings for your responses.PPP PPPStarting inPPP 3...PPP 2...PPP 1...PPP\n\n\nYou find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.\n'
+field.init_txt = 'Great, it\'s you, we don\'t have much time.\nPPPPPPIt seems to me your trans-manifold data buffer is pretty small.\nPPP\
+PPPI’ll provide audiovisual descriptions of your coordinates for the time being.\nPPPPPPUpload is a bitch so we’ll keep it to small\
+ strings for your responses.\n\nPPPPPPStarting inPPP 3...PPP 2...PPP 1...PPP\n\n\nYou find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.\n'
   
 field.actions = {'look' : {''     : ('There are lots of foxes, solid in a ring around you for at least 10 meters. You see trees in the moonlit distance.',None)},
                  'talk' : {''     : ('You babble to yourself. The foxes do not respond, but seem to grow more angry.',None),
@@ -43,16 +43,16 @@ field.actions = {'look' : {''     : ('There are lots of foxes, solid in a ring a
                            'foxes': ('A fox comes forward, apparently their leader. You talk to the head fox.',fieldq)
                           },
              }
-fieldq.init_txt = 'The head fox climbs on top of two other foxes, reaching up towards your face.\nPPP PPP' + foxascii + '\nPPPAt eye level he asks you: Naked man, can you help me?'
+fieldq.init_txt = 'The head fox climbs on top of two other foxes, reaching up towards your face.PPP PPP\n' + foxascii + '\nPPPAt eye level he asks you: Naked man, can you help me?\n'
 fieldq.actions = {'look' : {'' : ('The foxes await your answer intently, their eyes glow softly in the moonlight.',None)},
                   'say'  : {'yes': ('',task1),
                             'no' : ('', persuasion),
                             },
                   }
                   
-persuasion.init_txt = 'The head fox scoffs at you.PPP He replies, with a coarse voice: Our king told us \
-your kin has a set of pills that concentrate all desirable edibles. We could provide you with those if you \
-so choose. Would this change your mind?'
+persuasion.init_txt = 'The head fox scoffs at you.\nPPPHe replies, with a coarse voice: Our king told us \
+your kin has a set of pills that concentrate all desirable edibles.\nWe could provide you with those if you \
+so choose. Would this change your mind?\n'
 
 persuasion.actions = {'look' : {'' : ('The foxes await your answer intently, their eyes glow softly in the moonlight.',None)},
                       'say': {'yes': ('',task1),
@@ -60,7 +60,7 @@ persuasion.actions = {'look' : {'' : ('The foxes await your answer intently, the
                    he clearly isn\'t the chosen one. I say we eat him and wait for the next hairless biped! \n The\
                     foxes tore you to pieces...','EXIT'),
                               },
-                  }
+                     }
 task1.init_txt = 'The head fox proceeds: \n Ok, a bit of background. You live in the cotangent bundle of our manifold. \
 For every point in our space there’s a vector field in yours. Our king used to study how to minimize \
 our actions. And for that he had to go to your world. Our effort to track him down will involve you searching \
@@ -68,7 +68,7 @@ for a set of three imprints he must have left in his journeys. \n To our best kn
  in the source of all knowledge. With you must retrieve the source of all suffering.  It should look like mountain peeks. \
   Inside search for the reason of the discreetness of a conserved quantity. Reference this.'
 task1.actions = {'enter_code': {'6.153': ('',task2)},
-                 'look' : {'':('The foxes buzz around in some sort of dance, yipping as they go.\nIt reminds you of dancing particles of dust.', None)}
+                 'look' : {'':('The foxes buzz around in some sort of dance, yipping as they go.\nIt reminds you of the dance of sparks breaking through an air gap.', None)}
                  }
 
 task2.init_txt =  'Great, this means he was in search of the fox monopole. Our monarch is the warmest and furriest of all foxes, \
@@ -80,17 +80,18 @@ task2.actions =  {
                             },
                   }
 furry1.init_txt = '''Very nice. We have confirmation of the coffee code sequence on our end. Good work, boss.
-PPPThere aren't more than 5 foxes in the world capable of that feat. We almost know who you are.
-PPPWe have one finaltask for you.
+PPPPPPThere aren't more than 5 foxes in the world capable of that feat. We almost know who you are.
+PPPPPPWe have one finaltask for you.
 
-PPPWe think we\'ve found something on your manifold.
-PPPSomething... PPPbig.
-PPPThere\'s a fox monopole right under your tailless ass.
-PPPSearch high in the room where old hopes go to die, inked in red.
-There you\'ll find a small, fuzzy dual of the fox monopole in our realm.
-Find it and enter the secret numbers the transdimensional lift has inscribed to its buttocks.'''
+PPPPPPWe think we\'ve found something on your manifold.
+PPPPPPSomething... PPPbig.
+PPPPPPThere\'s a fox monopole right under your tailless ass.
+PPPPPPSearch high in the room where old hopes go to die, inked in red.
+PPPPPPThere you\'ll find a small, fuzzy dual of the fox monopole in our realm.
+PPPPPPFind it and enter the secret numbers the transdimensional lift has inscribed to its buttocks.
+'''
 
-furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. The audience looks on with awe. They\'re counting on you...PPP sexy.',None),
+furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. The audience looks on with awe. They\'re counting on you... sexy.',None),
                            'computer' : ('It\'s an older computer, no match for a skilled hacker. Alas, you aren\'t even caught up on your basics.',None)
                            },
                   'say'  : {'fuck': ('Profanity will not be tolerated here. May you rot in that human-infested hell.','EXIT'),
@@ -98,15 +99,15 @@ furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. T
                             'yes' : ('Well, get on with it.', None),
                            },
                   'help' : {'': ('What more help do you want, flat-face? I gave you all the computers have.\nPPPThese transdimensional computations are only possible to solve in numerical riddles.',None)},
-                  'enter_code' : {'12783', ('''Very nice, that checks out...
-                      PPP PPP
-                      FOX KING!
-                      PPP
-                      Do you remember your true identity now?
-                      PPP...PPPI told you to stay away from those conventions.
-                      PPPWhat do you call yourselves, again? Skinnies?
-                      PPPI don't judge what you do in your free time, but...PPPyour human analogues, the furries, at least know how to keep the right amount of fur showing! HAHAHA.
-                      PPPGet back to work, your foxes need you.
+                  'enter_code' : {'12783': ('''Very nice, that checks out...
+PPP PPP
+FOX KING!
+PPP
+Do you remember your true identity now?
+PPP...PPPI told you to stay away from those conventions.
+PPPWhat do you call yourselves, again? Skinnies?
+PPPI don't judge what you do in your free time, but...PPPyour human analogues, the furries, at least know how to keep the right amount of fur showing! HAHAHA.
+PPPGet back to work, your foxes need you.
                       ''','EXIT')},
                   }
 
@@ -122,6 +123,8 @@ def print2(text,**kwargs):
 def get_command(room):
     print('> ',end="",flush=True)
     command = input()
+    if command == '':
+        return get_command(room)
     parts = command.lower().split()
     if len(parts) == 1:
         parts.append('')
@@ -144,7 +147,7 @@ while True:
     while val is None:
         val = get_command(this_room)
     if val == 'EXIT':
-        print2('Foxworld connection terminated.\nPPPGoodbye.')
+        print2('Foxworld connection terminated.\nPPPGoodbye.\n')
         sys.exit(0)
     this_room = val
         
