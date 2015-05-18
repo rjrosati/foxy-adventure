@@ -20,6 +20,8 @@ with open('fox.txt','r') as f1:
 with open('death.txt','r') as f2:
     deathascii = f2.read()
 
+with open('field.txt','r') as f3:
+    fieldascii = f3.read()
 
 
 metaworld0.init_txt = 'Are you Maxwell Dare Porter, otherwise known as Barnacle Bill the Sailor?'
@@ -37,7 +39,7 @@ metaworld1.actions = {  'say': {'yes': ('',field),
                         }
 field.init_txt = 'Great, it\'s you, we don\'t have much time.\nPPPPPPIt seems to me your trans-manifold data buffer is pretty small.\nPPP\
 PPPI’ll provide audiovisual descriptions of your coordinates for the time being.\nPPPPPPUpload is a bitch so we’ll keep it to small\
- strings for your responses.\n\nPPPPPPStarting inPPP 3...PPP 2...PPP 1...PPP\n\n\nYou find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.\n'
+ strings for your responses.\n\nPPPPPPStarting inPPP 3...PPP 2...PPP 1...PPP\n\n'+fieldascii+'\n\nYou find yourself naked in a field, surrounded by foxes.\nIt\'s night, the moon is full.\n'
   
 field.actions = {'look' : {''     : ('There are lots of foxes, solid in a ring around you for at least 10 meters. You see trees in the moonlit distance.',None)},
                  'talk' : {''     : ('You babble to yourself. The foxes do not respond, but seem to grow more angry.',None),
