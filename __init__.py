@@ -9,6 +9,8 @@ class room():
 # all rooms
 metaworld0 = room(); metaworld1(); field = room(); fieldq = room(); persuasion= room(); task1 = room(); task2 = room()
 
+furry1 = room()
+
 
 # all commands, text
 
@@ -33,6 +35,7 @@ field.actions = {'look' : {''     : ('There are lots of foxes.',None)},
              }
 fieldq.init_txt = 'The head fox climbs on top of three other foxes. At eye level he asks you: Naked man, can you help me?'
 fieldq.actions = {'look' : {'' : ('The foxes await your answer intently, their eyes glow softly in the darkness.',None)},
+<<<<<<< HEAD
                   'say'  : {'yes': ('',None),
                             'no' : ('', persuasion),
                             },
@@ -60,6 +63,42 @@ In order to solve the Original Model Lagrangian he must have required some due p
 direction would have been in the search of warmth and wakefulness. Hairless friend, search for this ones within your surroundings.'
 task2.actions ={'': ('',)}
 
+=======
+                  'say'  : {'yes': ('yes text',furry1),
+                            'no' : ('no text', None),
+                            },
+                  }
+furry1.init_txt = '''Very nice. We have confirmation of the coffee code sequence on our end. Good work, boss.
+PPPThere aren't more than 5 foxes in the world capable of that feat. We almost know who you are.
+PPPWe have one finaltask for you.
+
+PPPWe think we\'ve found something on your manifold.
+PPPSomething... PPPbig.
+PPPThere\'s a fox monopole right under your tailless ass.
+PPPSearch high in the room where old hopes go to die, inked in red.
+There you\'ll find a small, fuzzy dual of the fox monopole in our realm.
+Find it and enter the secret numbers the transdimensional lift has inscribed to its buttocks.'''
+
+furry1.actions = {'look' : {'' : ('The fox computer nerd is waiting patiently. The audience looks on with awe. They\'re counting on you...PPP sexy.',None),
+                           'computer' : ('It\'s an older computer, no match for a skilled hacker. Alas, you aren\'t even caught up on your basics.',None)
+                           },
+                  'say'  : {'fuck': ('Profanity will not be tolerated here. May you rot in that human-infested hell.','EXIT'),
+                            'no'  : ('You can\'t refuse me and get away with it!\nPPP', 'EXIT'),
+                            'yes' : ('Well, get on with it.', None),
+                           },
+                  'help' : {'': ('What more help do you want, flat-face? I gave you all the computers have.\nPPPThese transdimensional computations are only possible to solve in numerical riddles.',None)},
+                  'enter_code' : {'12783', '''Very nice, that checks out...
+                      PPP PPP
+                      FOX KING!
+                      PPP
+                      Do you remember your true identity now?
+                      PPP...PPPI told you to stay away from those conventions.
+                      PPPWhat do you call yourselves, again? Skinnies?
+                      PPPI don't judge what you do in your free time, but...PPPyour human analogues, the furries, at least know how to keep the right amount of fur showing! HAHAHA.
+                      PPPGet back to work, your people need you.
+                      ''','EXIT')},
+                  }
+>>>>>>> f173a89a984d855959037a0ffdfd7a2e10848fe8
 
 
 def print2(text,**kwargs):
@@ -90,11 +129,12 @@ def get_command(room):
 
 this_room = field
 while True:
-    print(this_room.init_txt)
+    print2(this_room.init_txt)
     val = get_command(this_room)
     while val is None:
         val = get_command(this_room)
     if val == 'EXIT':
+        print2('Foxworld connection terminated.\nPPPGoodbye.')
         sys.exit(0)
     this_room = val
         
