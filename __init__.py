@@ -1,6 +1,5 @@
-import os
-import pdb
-
+import time
+import sys
 
 class room():
     def __init__(self):
@@ -26,6 +25,13 @@ fieldq.actions = {'look' : {'' : ('The foxes await your answer intently, their e
                             },
                   }
 
+def print2(text,**kwargs):
+    if 'PPP' in text:
+        for textbit in text.split('PPP'):
+            print(textbit,end="")
+            time.sleep(1)
+    else:
+         print(text,**kwargs)
 
 def get_command(room):
     print('> ',end="",flush=True)
@@ -39,7 +45,7 @@ def get_command(room):
         return get_command(room) 
     action = room.actions[parts[0]]
     try:
-        print(action[parts[1]][0])
+        print2(action[parts[1]][0])
         return action[parts[1]][1]
     except KeyError:
         print("You can't do that.")
@@ -51,5 +57,7 @@ while True:
     val = get_command(this_room)
     while val is None:
         val = get_command(this_room)
+    if val == 'EXIT':
+        sys.exit(0)
     this_room = val
         
