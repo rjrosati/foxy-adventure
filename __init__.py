@@ -111,7 +111,7 @@ PPP...PPPI told you to stay away from those conventions.
 PPPWhat do you call yourselves, again? Skinnies?
 PPPI don't judge what you do in your free time, but...PPPyour human analogues, the furries, at least know how to keep the right amount of fur showing! HAHAHA.
 PPPGet back to work, your foxes need you.
-                      ''','EXIT')},
+                      ''','FINAL')},
                   }
 
 
@@ -151,6 +151,9 @@ while True:
         val = get_command(this_room)
     if val == 'EXIT':
         print2(deathascii+'Foxworld connection terminated.\nPPPGoodbye.\n')
+        sys.exit(0)
+    if val == 'FINAL':
+        print2('Foxworld connection terminated.\nPPPGoodbye.\n')
         sys.exit(0)
     this_room = val
         
